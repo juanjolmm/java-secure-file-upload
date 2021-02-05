@@ -6,6 +6,7 @@ import java.io.InputStream;
 
 import javax.annotation.Nonnull;
 
+import com.juanjolmm.security.api.operator.SecureConfigurationLoader;
 import com.juanjolmm.security.api.qualifiers.InMemory;
 import com.juanjolmm.security.exception.SecureFileUploadException;
 import com.juanjolmm.security.impl.util.SecureFileUtils;
@@ -27,6 +28,15 @@ public final class SecureFileUploaderInMemory extends AbstractSecureFileUploader
 	 */
 	public SecureFileUploaderInMemory() {
 		super();
+	}
+
+	/**
+	 * Constructor with custom configLoader
+	 *
+	 * @param configLoader an implementation of SecureConfigurationLoader
+	 */
+	public SecureFileUploaderInMemory(SecureConfigurationLoader configLoader) {
+		super(configLoader);
 	}
 
 	@Override
