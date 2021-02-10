@@ -1,0 +1,6 @@
+#generated files
+/target/
+
+#Project conf and preferences files
+/.idea/
+/secure-file-upload.iml

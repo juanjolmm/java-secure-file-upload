@@ -7,6 +7,7 @@ import java.io.InputStream;
 
 import javax.annotation.Nonnull;
 
+import com.juanjolmm.security.api.operator.SecureConfigurationLoader;
 import org.apache.commons.io.FileUtils;
 
 import com.juanjolmm.security.api.qualifiers.Stored;
@@ -29,6 +30,15 @@ public final class SecureFileUploaderStored extends AbstractSecureFileUploader {
 	 */
 	public SecureFileUploaderStored() {
 		super();
+	}
+
+	/**
+	 * Constructor with custom configLoader
+	 *
+	 * @param configLoader an implementation of SecureConfigurationLoader
+	 */
+	public SecureFileUploaderStored(SecureConfigurationLoader configLoader) {
+		super(configLoader);
 	}
 
 	@Override

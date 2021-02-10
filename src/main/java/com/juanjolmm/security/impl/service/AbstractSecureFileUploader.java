@@ -36,7 +36,15 @@ public abstract class AbstractSecureFileUploader implements SecureFileUploader {
 	 * Default constructor.
 	 */
 	public AbstractSecureFileUploader() {
-		SecureConfigurationLoader configLoader = new SecureConfigurationLoaderImpl();
+		this(new SecureConfigurationLoaderImpl());
+	}
+
+	/**
+	 * Constructor with custom configLoader
+	 *
+	 * @param configLoader an implementation of SecureConfigurationLoader
+	 */
+	public AbstractSecureFileUploader(SecureConfigurationLoader configLoader) {
 		requestOperator = new SecureRequestOperatorImpl(configLoader);
 		fileOperator = new SecureFileOperatorImpl(configLoader);
 	}
